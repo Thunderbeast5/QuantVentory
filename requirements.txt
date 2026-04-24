@@ -4,10 +4,11 @@
 # Updated for Python 3.12 with pre-built wheels
 
 # Core quantum computing
-qiskit==1.1.1
+qiskit==1.4.5
 qiskit-optimization==0.6.1
-qiskit-aer==0.14.1
-qiskit-algorithms==0.2.1
+qiskit-aer==0.15.1
+qiskit-algorithms==0.3.1
+pylatexenc>=2.10
 
 # Data handling (updated for Python 3.12 compatibility)
 numpy>=1.26.0
