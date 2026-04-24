@@ -1,0 +1,90 @@
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv
+venv.bak/
+env.bak/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+test-results.xml
+
+# Streamlit
+.streamlit/
+.streamlit_cache/
+.streamlit_cache2/
+.streamlit_config.toml
+
+# Qiskit
+.qiskit/
+qasm_simulator/
+*.qasm
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+*.tmp
+tmp/
+temp/
+.cache/
+
+# OS
+Thumbs.db
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+
+# Outputs
+results/
+outputs/
+*.csv
+*.json
+*.pkl
+
+# Local development
+local_config.py
+debug.log

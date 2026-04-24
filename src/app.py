@@ -41,32 +41,109 @@ st.markdown("""
   /* Import clean sans-serif */
   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
 
-  html, body, [class*="css"] {
+  /* ====== FORCE WHITE MODE (override dark mode) ====== */
+  html, body, [class*="css"],
+  .stApp, .main, .block-container,
+  [data-testid="stAppViewContainer"],
+  [data-testid="stHeader"],
+  [data-testid="stToolbar"],
+  [data-testid="stDecoration"],
+  [data-testid="stStatusWidget"],
+  section[data-testid="stSidebar"],
+  section[data-testid="stSidebar"] > div,
+  [data-testid="stAppViewBlockContainer"],
+  [data-testid="stVerticalBlock"],
+  [data-testid="stHorizontalBlock"],
+  [data-testid="column"],
+  [data-testid="stExpander"],
+  [data-testid="stExpanderDetails"],
+  [data-testid="stMarkdownContainer"],
+  [data-testid="stDataFrame"],
+  [data-testid="stTable"],
+  .stTabs, .stTabs [role="tabpanel"],
+  .stSelectbox, .stNumberInput, .stTextInput, .stSlider,
+  [data-baseweb="select"], [data-baseweb="input"],
+  [data-baseweb="popover"], [data-baseweb="menu"],
+  .stAlert, .stSpinner {
+    background-color: #ffffff !important;
+    color: #1a1a1a !important;
     font-family: 'DM Sans', sans-serif;
-    background-color: #ffffff;
-    color: #1a1a1a;
+  }
+
+  /* Force all text to dark */
+  .stApp p, .stApp span, .stApp label, .stApp div,
+  .stApp h1, .stApp h2, .stApp h3, .stApp h4, .stApp h5, .stApp h6,
+  .stApp li, .stApp td, .stApp th, .stApp code,
+  [data-testid="stMarkdownContainer"] p,
+  [data-testid="stMarkdownContainer"] span,
+  [data-testid="stWidgetLabel"] p,
+  [data-testid="stWidgetLabel"] label {
+    color: #1a1a1a !important;
+  }
+
+  /* Fix input fields */
+  input, textarea, select,
+  [data-baseweb="input"] input,
+  [data-baseweb="select"] div,
+  .stSelectbox div[data-baseweb="select"] > div {
+    background-color: #ffffff !important;
+    color: #1a1a1a !important;
+    border-color: #e0e0e0 !important;
+  }
+
+  /* Fix dropdown menus */
+  [data-baseweb="popover"] > div,
+  [data-baseweb="menu"],
+  [role="listbox"],
+  [role="option"] {
+    background-color: #ffffff !important;
+    color: #1a1a1a !important;
+  }
+  [role="option"]:hover {
+    background-color: #f0f0f0 !important;
+  }
+
+  /* Fix dataframes */
+  .stDataFrame, .stDataFrame iframe,
+  [data-testid="stDataFrame"] > div {
+    background-color: #ffffff !important;
+  }
+
+  /* Fix expanders */
+  [data-testid="stExpander"] summary,
+  [data-testid="stExpander"] details {
+    background-color: #ffffff !important;
+    color: #1a1a1a !important;
+    border-color: #e8e8e8 !important;
   }
 
   /* Remove Streamlit branding */
   #MainMenu, footer, header { visibility: hidden; }
 
   /* Sidebar */
-  [data-testid="stSidebar"] {
-    background: #f9f9f9;
-    border-right: 1px solid #ebebeb;
+  [data-testid="stSidebar"],
+  [data-testid="stSidebar"] > div:first-child {
+    background: #ffffff !important;
+    border-right: 1px solid #e8e8e8 !important;
+  }
+
+  /* Horizontal rules / dividers */
+  hr, [data-testid="stSidebar"] hr {
+    border-color: #e8e8e8 !important;
+    background-color: #e8e8e8 !important;
   }
 
   /* Cards */
   .card {
-    background: #ffffff;
+    background: #ffffff !important;
     border: 1px solid #e8e8e8;
     border-radius: 8px;
     padding: 20px 24px;
     margin-bottom: 16px;
   }
   .card-accent {
-    background: #f7f9ff;
-    border: 1px solid #d8e2ff;
+    background: #ffffff !important;
+    border: 1px solid #e8e8e8;
     border-radius: 8px;
     padding: 20px 24px;
     margin-bottom: 16px;
@@ -78,14 +155,15 @@ st.markdown("""
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #888;
+    color: #888 !important;
     margin-bottom: 12px;
   }
 
   /* Metric chips */
   .metric-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
   .metric-chip {
-    background: #f4f4f4;
+    background: #ffffff !important;
+    border: 1px solid #e8e8e8;
     border-radius: 6px;
     padding: 10px 16px;
     text-align: center;
@@ -94,12 +172,12 @@ st.markdown("""
   .metric-chip .val {
     font-size: 22px;
     font-weight: 600;
-    color: #1a1a1a;
+    color: #1a1a1a !important;
     font-family: 'DM Mono', monospace;
   }
   .metric-chip .lbl {
     font-size: 11px;
-    color: #888;
+    color: #888 !important;
     margin-top: 2px;
   }
 
@@ -108,31 +186,32 @@ st.markdown("""
     font-family: 'DM Mono', monospace;
     font-size: 15px;
     letter-spacing: 0.15em;
-    background: #f4f4f4;
+    background: #ffffff !important;
+    border: 1px solid #e8e8e8;
     padding: 8px 14px;
     border-radius: 5px;
     display: inline-block;
-    color: #333;
+    color: #333 !important;
   }
 
   /* Violation badge */
   .violation {
-    background: #fff0f0;
+    background: #ffffff !important;
     border: 1px solid #ffd0d0;
     border-radius: 4px;
     padding: 4px 10px;
     font-size: 12px;
-    color: #c00;
+    color: #c00 !important;
     margin: 3px 0;
     display: block;
   }
   .ok-badge {
-    background: #f0faf4;
+    background: #ffffff !important;
     border: 1px solid #b8e8c8;
     border-radius: 4px;
     padding: 4px 10px;
     font-size: 12px;
-    color: #1a7a40;
+    color: #1a7a40 !important;
     display: inline-block;
   }
 
@@ -140,26 +219,27 @@ st.markdown("""
   .formula {
     font-family: 'DM Mono', monospace;
     font-size: 12px;
-    background: #f8f8f8;
+    background: #ffffff !important;
     border-left: 3px solid #d0d0d0;
     padding: 10px 14px;
     border-radius: 0 5px 5px 0;
-    color: #444;
+    color: #444 !important;
     white-space: pre;
     line-height: 1.7;
   }
 
   /* Tabs */
   .stTabs [role="tablist"] {
-    border-bottom: 1px solid #ebebeb;
+    border-bottom: 1px solid #e8e8e8 !important;
     gap: 0;
   }
   .stTabs [role="tab"] {
     font-size: 13px;
     font-weight: 500;
-    color: #888;
+    color: #888 !important;
     padding: 8px 18px;
     border-bottom: 2px solid transparent;
+    background-color: #ffffff !important;
   }
   .stTabs [aria-selected="true"] {
     color: #1a1a1a !important;
@@ -168,8 +248,8 @@ st.markdown("""
 
   /* Button */
   .stButton > button {
-    background: #1a1a1a;
-    color: #fff;
+    background: #1a1a1a !important;
+    color: #fff !important;
     border: none;
     border-radius: 6px;
     padding: 10px 28px;
@@ -181,18 +261,33 @@ st.markdown("""
     width: 100%;
     transition: background 0.15s;
   }
-  .stButton > button:hover { background: #333; }
+  .stButton > button:hover { background: #333 !important; }
 
   /* Number inputs */
   .stNumberInput input, .stTextInput input {
-    border: 1px solid #e0e0e0;
+    border: 1px solid #e0e0e0 !important;
     border-radius: 5px;
     font-family: 'DM Mono', monospace;
     font-size: 13px;
+    background-color: #ffffff !important;
+    color: #1a1a1a !important;
+  }
+
+  /* Number input buttons */
+  .stNumberInput button {
+    background-color: #ffffff !important;
+    color: #1a1a1a !important;
+    border-color: #e0e0e0 !important;
   }
 
   /* Streamlit slider */
   .stSlider { padding-top: 4px; }
+
+  /* Tooltip / popover */
+  [data-baseweb="tooltip"] {
+    background-color: #ffffff !important;
+    color: #1a1a1a !important;
+  }
 </style>
 """, unsafe_allow_html=True)
 

@@ -1,5 +1,7 @@
+
 # Quantventory — Inventory Optimization using Quantum Computing (QAOA)
 # ===================================================================
+# Updated for Python 3.12 with pre-built wheels
 
 # Core quantum computing
 qiskit==1.1.1
@@ -7,13 +9,13 @@ qiskit-optimization==0.6.1
 qiskit-aer==0.14.1
 qiskit-algorithms==0.2.1
 
-# Data handling
-numpy==1.24.3
-pandas==2.0.3
+# Data handling (updated for Python 3.12 compatibility)
+numpy>=1.26.0
+pandas>=2.1.0
 
-# Visualization
-matplotlib==3.7.2
-streamlit==1.28.1
+# Visualization (updated for Python 3.12 compatibility)
+matplotlib>=3.8.0
+streamlit>=1.28.0
 
 # Utilities
-scipy==1.11.2
+scipy>=1.11.0
